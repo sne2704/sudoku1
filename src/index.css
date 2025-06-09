@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  gap: 2px;
+  margin: 20px auto;
+}
+
+/* Base input style */
+.grid input {
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #444;
+  outline: none;
+  background-color: lightgray;
+  color:#444;
+}
+
+/* Thicker border for 3x3 blocks */
+.grid input:nth-child(3n) {
+  border-right: 2px solid #888;
+}
+
+.grid input:nth-child(n + 19):nth-child(-n + 27),
+.grid input:nth-child(n + 46):nth-child(-n + 54) {
+  border-bottom: 2px solid #888;
+}
+
+/* Disabled inputs (prefilled cells) */
+input[disabled] {
+  background-color: #444;
+  color: #fff;
+  font-weight: bold;
+  cursor: not-allowed;
+  user-select: none;
+}
+
+/* Focus styling */
+input:focus {
+  border-color: #6cf;
+  box-shadow: 0 0 5px #6cf;
+  background-color: #222d44;
+  color: #fff;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.message {
+  margin-top: 10px;
+  font-size: 18px;
+}
